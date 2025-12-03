@@ -43,7 +43,7 @@ namespace Vector {
   CONSOLE_VAR_RANGED(s32,   kProcFace_EllipseDelta,               CONSOLE_GROUP, IsXray() ? 15 : 10, 1, 90);
   CONSOLE_VAR_RANGED(f32,   kProcFace_EyeLightnessMultiplier,     CONSOLE_GROUP, 1.f, 0.f, 2.f);
 
-  CONSOLE_VAR(bool,         kProcFace_HotspotRender,              CONSOLE_GROUP, true); // Render glow
+  CONSOLE_VAR(bool,         kProcFace_HotspotRender,              CONSOLE_GROUP, false); // Render glow
   CONSOLE_VAR_RANGED(f32,   kProcFace_HotspotFalloff,             CONSOLE_GROUP, 0.48f, 0.05f, 1.f);
  
   CONSOLE_VAR(bool,         kProcFace_EnableAntiAliasing,         CONSOLE_GROUP, true);
@@ -75,8 +75,8 @@ namespace Vector {
   static const s32 kNumNoiseImages = 7;
 
   CONSOLE_VAR_RANGED(s32, kProcFace_NoiseNumFrames,              CONSOLE_GROUP, 5, 0, kNumNoiseImages);
-  CONSOLE_VAR_RANGED(f32, kProcFace_NoiseMinLightness,           CONSOLE_GROUP, IsXray() ? 0.98f : 0.92f, 0.f, 2.f); // replaces kProcFace_NoiseFraction
-  CONSOLE_VAR_RANGED(f32, kProcFace_NoiseMaxLightness,           CONSOLE_GROUP, IsXray() ? 1.05f : 1.14f, 0.f, 2.f);
+  CONSOLE_VAR_RANGED(f32, kProcFace_NoiseMinLightness,           CONSOLE_GROUP, IsXray() ? 0.98f : 2f, 0.f, 2.f); // replaces kProcFace_NoiseFraction
+  CONSOLE_VAR_RANGED(f32, kProcFace_NoiseMaxLightness,           CONSOLE_GROUP, IsXray() ? 1.05f : 2f, 0.f, 2.f);
 
   CONSOLE_VAR_EXTERN(s32, kProcFace_NoiseNumFrames);
 #else
