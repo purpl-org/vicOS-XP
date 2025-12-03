@@ -50,9 +50,9 @@ namespace Vector {
   CONSOLE_VAR_RANGED(s32,   kProcFace_AntiAliasingSize,           CONSOLE_GROUP, IsXray() ? 2 : 3, 0, 15); // full image antialiasing (3 will use NEON)
   CONSOLE_VAR_ENUM(uint8_t, kProcFace_AntiAliasingFilter,         CONSOLE_GROUP, (uint8_t)Filter::BoxFilter, "None,Box,Gaussian");
   CONSOLE_VAR_RANGED(f32,   kProcFace_AntiAliasingSigmaFraction,  CONSOLE_GROUP, IsXray() ? 0.3f : 0.5f, 0.0f, 1.0f);
-  CONSOLE_VAR(bool, kProcFace_CustomEyes, CONSOLE_GROUP, false);
+  CONSOLE_VAR(bool, kProcFace_CustomEyes, CONSOLE_GROUP, true);
   CONSOLE_VAR_RANGED(f32, kProcFace_CustomEyeOpacity, CONSOLE_GROUP, 0.8f, 0.f, 1.f);
-  CONSOLE_VAR_ENUM(u8, kProcFace_FlavorOfGay, CONSOLE_GROUP, 0, "Lesbian,Gay,Bi,Trans,Pan,Frog,All,Galaxy,Custom");
+  CONSOLE_VAR_ENUM(u8, kProcFace_FlavorOfGay, CONSOLE_GROUP, 0, "XP,Lesbian,Gay,Bi,Trans,Pan,Frog,All,Galaxy,Custom");
   static void LOOK_LoadFaceOverlay(ConsoleFunctionContextRef context)
   {
     ProceduralFaceDrawer::LoadCustomEyePNG();
@@ -259,6 +259,7 @@ void ProceduralFaceDrawer::LoadCustomEyePNG()
   std::lock_guard<std::mutex> lk(gCustomEyeMtx);
   _hasCustomEyes = false;
   static const cv::String kFaceOverlays[9] = { 
+    "/anki/data/assets/cozmo_resources/assets/faceOverlays/xp.jpg",
     "/anki/data/assets/cozmo_resources/assets/faceOverlays/lesbian.jpg", 
     "/anki/data/assets/cozmo_resources/assets/faceOverlays/gay.jpg",
     "/anki/data/assets/cozmo_resources/assets/faceOverlays/bi.jpg",
