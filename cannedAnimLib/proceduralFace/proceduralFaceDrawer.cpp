@@ -258,7 +258,7 @@ void ProceduralFaceDrawer::LoadCustomEyePNG()
 {
   std::lock_guard<std::mutex> lk(gCustomEyeMtx);
   _hasCustomEyes = false;
-  static const cv::String kFaceOverlays[9] = { 
+  static const cv::String kFaceOverlays[10] = { 
     "/anki/data/assets/cozmo_resources/assets/faceOverlays/xp.jpg",
     "/anki/data/assets/cozmo_resources/assets/faceOverlays/lesbian.jpg", 
     "/anki/data/assets/cozmo_resources/assets/faceOverlays/gay.jpg",
